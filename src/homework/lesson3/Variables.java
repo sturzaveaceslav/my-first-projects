@@ -1,3 +1,5 @@
+package homework.lesson3;
+
 public class Variables {
     public static void main(String[] args) {
 
@@ -9,7 +11,7 @@ public class Variables {
 
         System.out.println("Current World Population: " + currentWorldPopulation);
         System.out.println("Cars Produced-This-Year: " + carsProducedThisYear);
-        System.out.println("First Later In Alphabet " + firstLeterInAlphabet);
+        System.out.println("First Later In Alphabet: " + firstLeterInAlphabet);
         System.out.println("Java Is Amazing: " + javaIsAnazing);
         System.out.println("PI: " + pi);
     }
