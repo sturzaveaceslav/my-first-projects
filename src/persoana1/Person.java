@@ -1,11 +1,11 @@
 package persoana1;
 
+import javax.swing.*;
+import java.util.Scanner;
+
 public class Person {
     public static void main(String[] args) {
-
-        int a = 25;
-        a = a++ + a + a-- - a-- + ++a;
-        System.out.println(a);
+ int score = 100;
 
     }
 }
