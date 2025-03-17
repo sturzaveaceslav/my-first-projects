@@ -16,7 +16,7 @@ public class Number1to100 {
         }
         while (number < 1 || number > 100);
         System.out.println("The number is: " + number); */
-
+        // de aici, while simplu
         while (true) {
             System.out.print("Enter a number from 1 to 100: ");
             number = sc.nextInt();

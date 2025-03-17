@@ -38,7 +38,7 @@ public class Menu {
                     System.out.println("Exit the program");
                     break;
                 default:
-                    System.out.println("nvalid option!");
+                    System.out.println("Invalid option!");
             }
         }
         while (option != 4);
