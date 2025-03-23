@@ -1,4 +1,12 @@
 package homework.lesson10;
+/*Creează o clasă SavingsAccount (Cont de economii). Folosește un modificator static pentru a declara variabila annualInterestRate (rata anuală a dobânzii), care va fi
+ valabilă pentru toți titularii de conturi. Fiecare obiect al clasei va conține o variabilă privată savingsBalance (soldul contului de economii), care reprezintă suma
+ pe care o are titularul de cont în depozit.
+     •	O metodă finală numită calculateMonthlyInterest va calcula dobânda lunară prin înmulțirea soldului savingsBalance cu annualInterestRate împărțit la 12.
+        Această dobândă va fi adăugată la savingsBalance.
+•	O metodă statică numită modifyInterestRate va modifica valoarea statică a variabilei annualInterestRate, actualizând-o la o valoare nouă.
+*/
+
 
 public class SavingsAccount {
     private static double annualInterestRate;
