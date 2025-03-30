@@ -1,4 +1,4 @@
-package cursuriPractice;
+package cursuriPractice.chapter8;
 
 public class PracticeForBreak {
     public static void main(String[] args) {

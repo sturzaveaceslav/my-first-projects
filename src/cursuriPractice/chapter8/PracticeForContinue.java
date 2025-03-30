@@ -1,4 +1,4 @@
-package cursuriPractice;
+package cursuriPractice.chapter8;
 
 
 public class PracticeForContinue {

@@ -1,4 +1,4 @@
-package cursuriPractice;
+package cursuriPractice.chapter8;
 /*
 Crearea unui meniu interactiv: Vrem sa implementam un meniun interactic in consola Java, unde utilizatorul poate alege optiuni diferite pina cind decidem sa iasa din program:
 Cerine: 1. Afiseaza un mesaj de salut; 2. Cere utilizatorului doua numere pentru a afisa suma;

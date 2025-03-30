@@ -1,4 +1,4 @@
-package cursuriPractice;
+package cursuriPractice.chapter8;
 // Cere utilizatorului sa introduca un numar intre 1 si 100. Daca numarul nu este in acest interval, cere introducerea unui nou numar.
 // aici folosim while si do while
 
