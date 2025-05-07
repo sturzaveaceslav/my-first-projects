@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:bal="http://schemas.microsoft.com/wix/BalExtension">
+
+  <Bundle Name="Milionar Setup"
+          Version="1.0.0.0"
+          Manufacturer="SlavonSoft"
+          UpgradeCode="3f2504e0-4f89-11d3-9a0c-0305e82c3301">
+    
+    <BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.RtfLicense">
+      <bal:WixStandardBootstrapperApplication SuppressOptionsUI="yes" />
+    </BootstrapperApplicationRef>
+
+    <Chain>
+      <MsiPackage SourceFile="milionar-setup.msi" />
+    </Chain>
+  </Bundle>
+</Wix>

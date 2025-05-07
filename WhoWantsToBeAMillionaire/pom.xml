@@ -11,19 +11,11 @@
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <javafx.version>21</javafx.version>
     </properties>
 
-    <configuration>
-        <mainClass>main.MillionaireApp</mainClass>
-        <options>
-            <option>--add-exports=javafx.base/com.sun.javafx=ALL-UNNAMED</option>
-        </options>
-    </configuration>
-
-
     <dependencies>
+        <!-- JavaFX dependencies -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
@@ -51,10 +43,9 @@
         </dependency>
     </dependencies>
 
-
     <build>
         <plugins>
-            <!-- Plugin de compilare corectă pentru Java 17 -->
+            <!-- Plugin pentru compilare -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -65,13 +56,17 @@
                 </configuration>
             </plugin>
 
-            <!-- Plugin pentru rularea aplicației JavaFX -->
+            <!-- Plugin pentru generarea JAR-ului rulabil -->
             <plugin>
-                <groupId>org.openjfx</groupId>
-                <artifactId>javafx-maven-plugin</artifactId>
-                <version>0.0.8</version>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.2.0</version>
                 <configuration>
-                    <mainClass>main.MillionaireApp</mainClass>
+                    <archive>
+                        <manifest>
+                            <mainClass>main.MillionaireApp</mainClass>
+                        </manifest>
+                    </archive>
                 </configuration>
             </plugin>
         </plugins>

@@ -14,7 +14,6 @@ import javafx.stage.Stage;
 import model.Answer;
 import model.Question;
 
-import java.io.File;
 import java.util.*;
 
 public class MillionaireApp extends Application {

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="*" Name="Cine vrea sa fie milionar" Language="1033" Version="1.0.0.0"
+           Manufacturer="Slavon" UpgradeCode="12345678-abcd-abcd-abcd-123456789000" Codepage="1252">
+    <Package InstallerVersion="500" Compressed="yes" InstallScope="perMachine" />
+
+    <MediaTemplate />
+
+    <Icon Id="AppIcon" SourceFile="icon.ico"/>
+    <Property Id="ARPPRODUCTICON" Value="AppIcon" />
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLFOLDER" Name="Milionar" />
+      </Directory>
+      <Directory Id="DesktopFolder" />
+    </Directory>
+
+    <Component Id="JarComponent" Guid="9e64b815-7857-4fa5-a2dc-25b8a1fc1ac0" Directory="INSTALLFOLDER">
+      <File Id="milionarJar" Source="..\target\milionar-1.0-SNAPSHOT.jar" KeyPath="yes" />
+    </Component>
+
+    <Component Id="ShortcutComponent" Guid="d178cf62-888e-4c9c-b888-4234ecfa9e88" Directory="DesktopFolder">
+      <Shortcut Id="desktopShortcut"
+                Name="Milionar"
+                Description="Lansează jocul Milionar"
+                WorkingDirectory="INSTALLFOLDER"
+                Icon="AppIcon"
+                IconIndex="0"
+                Advertise="no"
+                Target="C:\Program Files\Eclipse Adoptium\jdk-17.0.14.7-hotspot\bin\javaw.exe"
+                Arguments="-jar &quot;[INSTALLFOLDER]milionar-1.0-SNAPSHOT.jar&quot;" />
+      <RemoveFolder Id="CleanUpShortcut" On="uninstall" />
+      <RegistryValue Root="HKCU" Key="Software\Slavon\Milionar" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+    </Component>
+
+    <Feature Id="ProductFeature" Title="Milionar Game" Level="1">
+      <ComponentRef Id="JarComponent" />
+      <ComponentRef Id="ShortcutComponent" />
+    </Feature>
+  </Product>
+</Wix>
