@@ -234,4 +234,8 @@ public class Game {
                 }, 5, 1000));
         questionBank.put(5, nivel5);
     }
+    public static Map<Integer, List<Question>> getQuestionBank() {
+        return questionBank;
+    }
+
 }

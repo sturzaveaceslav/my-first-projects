@@ -1,12 +1,15 @@
-// HelpOption.java
 package help;
 
-import model.Question;
-
-public abstract class HelpOption implements Invokable {
+public abstract class HelpOption {
     protected boolean isUsed = false;
 
     public boolean isUsed() {
         return isUsed;
     }
+
+    public void reset() {
+        isUsed = false;
+    }
+
+    public abstract HelpAnswer[] getHelpAnswers(model.Question question);
 }
