@@ -6,6 +6,8 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.*;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -14,6 +16,7 @@ import javafx.stage.Stage;
 import model.Answer;
 import model.Question;
 
+import javafx.scene.image.Image; // CORECT
 import java.util.*;
 
 public class MillionaireApp extends Application {
@@ -38,6 +41,17 @@ public class MillionaireApp extends Application {
         root = new VBox(15);
         root.setPadding(new Insets(20));
         root.setAlignment(Pos.CENTER);
+
+// Setează fundal cu imagine
+        BackgroundImage bgImage = new BackgroundImage(
+                new Image(getClass().getResource("/img/milionar.jpg").toExternalForm()),
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundPosition.CENTER,
+                new BackgroundSize(100, 100, true, true, true, true)
+        );
+        root.setBackground(new Background(bgImage));
+
 
         questionLabel = new Label("Întrebare");
         questionLabel.setWrapText(true);
