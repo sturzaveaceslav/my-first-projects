@@ -135,7 +135,8 @@ public class MillionaireApp extends Application {
     private void nextQuestion() {
         currentQuestion = game.getRandomQuestion(currentLevel);
         if (currentQuestion == null) {
-            questionLabel.setText("Nu mai sunt întrebări pentru nivelul " + currentLevel);
+            showAlert("🎉 Jocul s-a încheiat!\nScor final: " + score);
+            disableAnswers();
             return;
         }
 
@@ -149,6 +150,7 @@ public class MillionaireApp extends Application {
 
         activeHelpAnswers = null;
     }
+
 
     private void handleAnswer(String input) {
         Answer[] answers = currentQuestion.getAnswers();
