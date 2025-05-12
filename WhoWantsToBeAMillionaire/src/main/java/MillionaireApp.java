@@ -1,6 +1,7 @@
-package main;
-
-import help.*;
+import help.AudienceHelp;
+import help.FiftyFiftyHelp;
+import help.HelpAnswer;
+import help.PhoneHelp;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -42,17 +43,35 @@ public class MillionaireApp extends Application {
         root.setPadding(new Insets(20));
         root.setAlignment(Pos.CENTER);
 
-// Setează fundal cu imagine
+        // Fundal imagine
+        Image bgImg = new Image(Objects.requireNonNull(getClass().getResource("/img/milionar.jpg")).toExternalForm());
         BackgroundImage bgImage = new BackgroundImage(
-                new Image(getClass().getResource("/img/milionar.jpg").toExternalForm()),
+                bgImg,
                 BackgroundRepeat.NO_REPEAT,
                 BackgroundRepeat.NO_REPEAT,
                 BackgroundPosition.CENTER,
-                new BackgroundSize(100, 100, true, true, true, true)
+                new BackgroundSize(800, 800, false, false, false, false)
+
         );
         root.setBackground(new Background(bgImage));
 
 
+        // Fundal întunecat transparent peste imagine
+        BackgroundFill overlay = new BackgroundFill(
+                javafx.scene.paint.Color.rgb(0, 0, 0, 0.6), CornerRadii.EMPTY, Insets.EMPTY
+        );
+
+        // TOT conținutul în wrapper cu fundal
+        StackPane wrapper = new StackPane();
+        wrapper.setPrefSize(800, 600);
+        wrapper.setBackground(new Background(
+                Collections.singletonList(overlay),
+                Collections.singletonList(bgImage)
+        ));
+        wrapper.getChildren().add(root);
+        // pune jocul peste fundal
+
+        // Conținutul normal (rămâne la tine neschimbat)
         questionLabel = new Label("Întrebare");
         questionLabel.setWrapText(true);
         questionLabel.setFont(new Font(18));
@@ -99,7 +118,8 @@ public class MillionaireApp extends Application {
 
         root.getChildren().addAll(scoreLabel, questionLabel, grid, helpBox, controlBox);
 
-        Scene scene = new Scene(root, 700, 400);
+        // SCENA pe StackPane (wrapper), NU pe root!
+        Scene scene = new Scene(wrapper, 800, 600);
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/style.css")).toExternalForm());
 
         stage.setScene(scene);
@@ -108,6 +128,8 @@ public class MillionaireApp extends Application {
 
         playIntroSound();
         nextQuestion();
+
+
     }
 
     private void nextQuestion() {

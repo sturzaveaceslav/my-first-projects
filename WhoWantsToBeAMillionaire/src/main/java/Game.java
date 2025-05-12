@@ -1,5 +1,3 @@
-package main;
-
 import model.Answer;
 import model.Question;
 import help.FiftyFiftyHelp;

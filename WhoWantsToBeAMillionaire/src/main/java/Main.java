@@ -1,5 +1,3 @@
-package main;
-
 import exception.InvalidInputException;
 
 public class Main {
